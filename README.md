@@ -8,29 +8,33 @@ A **link budget** is the calculation of all gains and losses occurring in a comm
 
 The major parameters involved are:
 
-* Transmitter Power ((P_t))
-* Transmitter Antenna Gain ((G_t))
-* Receiver Antenna Gain ((G_r))
-* Path Loss ((L_p))
-* System Losses
+## Parameters in Link Budget Calculation
+
+- Transmitter Power $(P_t)$
+- Transmitter Antenna Gain $(G_t)$
+- Receiver Antenna Gain $(G_r)$
+- Path Loss $(L_p)$
+- System Losses
 
 The received power can be calculated using the Friis transmission equation:
 
-P_r(dBm)=P_t(dBm)+G_t(dB)+G_r(dB)-L_p(dB)
+$$
+P_r(dBm) = P_t(dBm) + G_t(dB) + G_r(dB) - L_p(dB)
+$$
 
 Where:
 
-* (P_r) = Received Power
-* (P_t) = Transmitted Power
-* (G_t) = Transmitter antenna gain
-* (G_r) = Receiver antenna gain
-* (L_p) = Path loss
+- $P_r$ = Received Power
+- $P_t$ = Transmitted Power
+- $G_t$ = Transmitter antenna gain
+- $G_r$ = Receiver antenna gain
+- $L_p$ = Path loss
 
 Increasing either transmitter gain or receiver gain improves the received signal strength.
 
 ---
 
-# MATLAB Program
+## MATLAB Program
 
 ```matlab
 % Simulation of Transmitter and Receiver Gain Effects
@@ -82,7 +86,7 @@ colorbar;
 
 ---
 
-# Explanation of the Program
+## Explanation of the Program
 
 1. The transmit power is fixed at 20 dBm.
 2. Path loss is assumed to be 100 dB.
@@ -92,17 +96,35 @@ colorbar;
 
 ---
 
-# Expected Output
+## Output
+## Received Power Matrix (dBm)
 
-* A matrix containing received power values.
-* A 3D surface graph showing:
+```text
+[[-80 -78 -76 -74 -72 -70 -68 -66 -64 -62 -60]
+ [-78 -76 -74 -72 -70 -68 -66 -64 -62 -60 -58]
+ [-76 -74 -72 -70 -68 -66 -64 -62 -60 -58 -56]
+ [-74 -72 -70 -68 -66 -64 -62 -60 -58 -56 -54]
+ [-72 -70 -68 -66 -64 -62 -60 -58 -56 -54 -52]
+ [-70 -68 -66 -64 -62 -60 -58 -56 -54 -52 -50]
+ [-68 -66 -64 -62 -60 -58 -56 -54 -52 -50 -48]
+ [-66 -64 -62 -60 -58 -56 -54 -52 -50 -48 -46]
+ [-64 -62 -60 -58 -56 -54 -52 -50 -48 -46 -44]
+ [-62 -60 -58 -56 -54 -52 -50 -48 -46 -44 -42]
+ [-60 -58 -56 -54 -52 -50 -48 -46 -44 -42 -40]]
+```
+<img width="434" height="362" alt="image" src="https://github.com/user-attachments/assets/07580dcb-0132-4255-81a4-720e51a30ede" />
 
-  * Increasing transmitter gain increases received power.
-  * Increasing receiver gain also increases received power.
-  * Maximum received power occurs when both gains are highest.
+## Advantages
+* Improves received signal strength
+* Enhances communication range
+* Reduces signal attenuation effects
+* Increases link reliability
+* Helps overcome path loss in wireless channels
 
----
+## Applications
+* Cellular communication systems
+* Satellite communication
+* Wi-Fi and WLAN networks
+* Radar systems
+* V2X and vehicular communication
 
-# Conclusion
-
-This simulation demonstrates the importance of transmitter and receiver antenna gains in wireless communication systems. Higher antenna gains improve received signal strength and help compensate for path loss, thereby enhancing communication reliability and coverage.
